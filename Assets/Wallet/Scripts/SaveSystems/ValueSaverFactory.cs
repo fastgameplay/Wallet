@@ -5,10 +5,9 @@ public class ValueSaverFactory
 {
     Dictionary<SaveType,IValueSaver> _saverPool;
     Dictionary<ValueKey,SaveType> _savePreferences;
-    SaveType _defaultSaveType;
+    SaveType _defaultSaveType = SaveType.PlayerPrefs;
 
     public ValueSaverFactory(){
-        _defaultSaveType = SaveType.PlayerPrefs;
         SerializeSaverPool();
     }    
     public ValueSaverFactory(SaveType type){
@@ -34,8 +33,8 @@ public class ValueSaverFactory
         };
         //Default Preferences (You may delete this part)
         _savePreferences = new Dictionary<ValueKey,SaveType>{
-            {ValueKey.Gems,SaveType.TextFile},
-            {ValueKey.Coins,SaveType.PlayerPrefs}
+            // {ValueKey.Crystals,SaveType.TextFile},
+            // {ValueKey.Coins,SaveType.PlayerPrefs}
         };
     }
 }

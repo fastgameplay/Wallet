@@ -46,10 +46,7 @@ public class WalletStorage : MonoBehaviour
         if(_storage.ContainsKey(key) == false) LoadAndStore(key);
         _storage[key] = value;
     }
-    public void AddToValue(ValueKey key, int value){
-        if(_storage.ContainsKey(key) == false) LoadAndStore(key);
-        _storage[key] += value;
-    }
+   
 
     private void LoadAndStore(ValueKey key){
         _storage.Add(key,_valueSaverFactory.GetSaverForKey(key).Load(key));
